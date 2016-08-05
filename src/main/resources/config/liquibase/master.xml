@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160718003319_added_entity_TypeValue.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160718003323_added_entity_Contact.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160718003320_added_entity_Address.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160718003321_added_entity_Phone.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160718003322_added_entity_EmailAddress.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20160718003320_added_entity_constraints_Address.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160718003321_added_entity_constraints_Phone.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160718003322_added_entity_constraints_EmailAddress.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+    <!--<include file="classpath:config/liquibase/changelog/20160719174941_changelog.xml" relativeToChangelogFile="false" />-->
+    <!--<include file="classpath:config/liquibase/changelog/20160721092028_changelog.xml" relativeToChangelogFile="false" />-->
+    <!--<include file="classpath:config/liquibase/changelog/20160724224559_changelog.xml" relativeToChangelogFile="false" />-->
+    <include file="classpath:config/liquibase/changelog/20160724230115_changelog.xml" relativeToChangelogFile="false" />
+</databaseChangeLog>

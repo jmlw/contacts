@@ -1,0 +1,117 @@
+
+<!--<div class="modal-header">-->
+    <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true"-->
+            <!--ng-click="vm.cancel()">&times;</button>-->
+    <!--<h4 class="modal-title" translate="login.title">Sign in</h4>-->
+<!--</div>-->
+<div class="">
+    <div class="row">
+        <!-- controls -->
+        <div class="col-xs-6">
+            <button type="submit"
+                    ng-click="vm.back()"
+                    class="btn btn-info">
+                <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span class="" translate="entity.action.back"> Back</span>
+            </button>
+        </div>
+        <div class="col-xs-6 text-right">
+            <button type="submit"
+                    ui-sref="home-contact-edit({contactId: vm.contact.id})"
+                    class="btn btn-primary">
+                <span class="glyphicon glyphicon-pencil"></span>&nbsp;
+                <span class="" translate="entity.action.edit"></span>
+            </button>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-12 col-md-offset-0-3-2">
+                    <div ng-if="vm.contact.photo" class="jw-img img-circle">
+                        <img data-ng-src="{{'data:' + vm.contact.photoContentType + ';base64,' + vm.contact.photo}}"
+                             class="img center-block img-responsive  full-width">
+                    </div>
+                    <div ng-if="!vm.contact.photo" class="jw-img img-circle">
+                        <img src="../../content/images/hipster2x.png" class="img center-block img-responsive  full-width"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-center">{{vm.contact.firstName}} {{vm.contact.lastName}}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Contact details</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>{{vm.contact.firstName}} {{vm.contact.lastName}}
+                        <br>
+                    </h4>
+                    <p ng-if="vm.contact.nickName" class="text-muted">"{{vm.contact.nickName}}"</p>
+                    <div class="row contact-row" ng-if="vm.contact.company">
+                        <div class="col-md-4 jw-label" translate="contactsApp.contact.company">company</div>
+                        <div class="col-md-8">{{vm.contact.company}}</div>
+                    </div>
+                    <div class="row contact-row" ng-if="vm.contact.jobTitle">
+                        <div class="col-md-4 jw-label" translate="contactsApp.contact.jobTitle">Job Title</div>
+                        <div class="col-md-8">{{vm.contact.jobTitle}}</div>
+                    </div>
+                    <!--<div class="row contact-row" ng-repeat="emailAddress in vm.contact.emailAddresses track by emailAddress.id">-->
+                        <!--<div class="col-md-4 jw-label">{{emailAddress.type.value}}</div>-->
+                        <!--<div class="col-md-8">{{emailAddress.email}}</div>-->
+                    <!--</div>-->
+                    <!--<div class="row contact-row" ng-repeat="phone in vm.contact.phones track by phone.id">-->
+                        <!--<div class="col-md-4 jw-label">{{phone.type.value}}</div>-->
+                        <!--<div class="col-md-8">{{phone.phoneNumber}}</div>-->
+                    <!--</div>-->
+                    <div class="row contact-row" ng-if="vm.contact.birthdate">
+                        <div class="col-md-4 jw-label" translate="contactsApp.contact.birthdate">birthday</div>
+                        <div class="col-md-8">{{vm.contact.birthdate | date:'mediumDate'}}</div>
+                    </div>
+                    <div class="row contact-row" ng-repeat="address in vm.contact.addresses track by address.id">
+                        <div class="col-md-4 jw-label">{{address.type.value}}</div>
+                        <div class="col-md-8">
+                            <table>
+                                <tr>
+                                    <td>{{address.streetAddress}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{address.city}}, {{address.stateAbbr}} {{address.zip}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row contact-row" ng-repeat="phone in vm.contact.phoneNumbers track by phone.id">
+                        <div class="col-md-4 jw-label">{{phone.type.value}}</div>
+                        <div class="col-md-8">
+                            {{phone.phoneNumber}}
+                        </div>
+                    </div>
+                    <div class="row contact-row" ng-repeat="email in vm.contact.emailAddresses track by email.id">
+                        <div class="col-md-4 jw-label">{{email.type.value}}</div>
+                        <div class="col-md-8">
+                            {{email.email}}
+                        </div>
+                    </div>
+                    <div class="row contact-row" ng-if="vm.contact.website">
+                        <div class="col-md-4 jw-label" translate="contactsApp.contact.website">Website</div>
+                        <div class="col-md-8">{{vm.contact.website}}</div>
+                    </div>
+                    <div class="row contact-row" ng-if="vm.contact.notes">
+                        <div class="col-md-4 jw-label" translate="contactsApp.contact.notes">Notes</div>
+                        <div class="col-md-8">{{vm.contact.notes}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

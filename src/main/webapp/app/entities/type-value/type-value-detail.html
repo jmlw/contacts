@@ -1,0 +1,22 @@
+
+<div>
+    <h2><span translate="contactsApp.typeValue.detail.title">Type Value</span> {{vm.typeValue.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="contactsApp.typeValue.entityType">Entity Type</span></dt>
+        <dd>
+            <span translate="{{'contactsApp.EntityType.' + vm.typeValue.entityType}}">{{vm.typeValue.entityType}}</span>
+        </dd>
+        <dt><span translate="contactsApp.typeValue.value">Value</span></dt>
+        <dd>
+            <span>{{vm.typeValue.value}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

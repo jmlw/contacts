@@ -1,0 +1,50 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipType": "many-to-one",
+      "relationshipName": "type",
+      "otherEntityName": "typeValue",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "contact",
+      "otherEntityName": "contact",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "city",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "zip",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "state",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "stateAbbr",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "streetAddress",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160718003320",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "entityTableName": "address"
+}

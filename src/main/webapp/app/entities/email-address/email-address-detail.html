@@ -1,0 +1,26 @@
+
+<div>
+    <h2><span translate="contactsApp.emailAddress.detail.title">Email Address</span> {{vm.emailAddress.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="contactsApp.emailAddress.email">Email</span></dt>
+        <dd>
+            <span>{{vm.emailAddress.email}}</span>
+        </dd>
+        <dt><span translate="contactsApp.emailAddress.type">Type</span></dt>
+        <dd>
+            <a ui-sref="type-value-detail({id:vm.emailAddress.type.id})">{{vm.emailAddress.type.id}}</a>
+        </dd>
+        <dt><span translate="contactsApp.emailAddress.contact">Contact</span></dt>
+        <dd>
+            <a ui-sref="contact-detail({id:vm.emailAddress.contact.id})">{{vm.emailAddress.contact.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

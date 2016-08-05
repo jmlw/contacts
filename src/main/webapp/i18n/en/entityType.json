@@ -1,0 +1,10 @@
+{
+    "contactsApp": {
+        "EntityType" : {
+            "null": "",
+            "ADDRESS_TYPE": "ADDRESS_TYPE",
+            "PHONE_TYPE": "PHONE_TYPE",
+            "EMAIL_TYPE": "EMAIL_TYPE"
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "contactsApp": {
+        "emailAddress" : {
+            "home": {
+                "title": "EmailAddresses",
+                "createLabel": "Créer un nouveau Email Address",
+                "createOrEditLabel": "Créer ou éditer un Email Address",
+                "search": "Recherche pour Email Address"
+            },
+            "created": "Un nouveau Email Address a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Email Address avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Email Address avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Email Address {{ id }} ?"
+            },
+            "detail": {
+                "title": "Email Address"
+            },
+            "email": "Email",
+            "type": "Type",
+            "contact": "Contact"
+        }
+    }
+}

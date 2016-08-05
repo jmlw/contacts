@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+   <changeSet author="josh (generated)" id="1468614142797-1">
+      <addColumn tableName="type_value">
+         <column name="value" type="varchar(255)"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468614142797-2">
+      <dropColumn columnName="ADDRESS_ID" tableName="ADDRESS"/>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468614142797-3">
+      <dropColumn columnName="CONTACT_ID" tableName="CONTACT"/>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468614142797-4">
+      <dropColumn columnName="EMAIL_ADDRESS_ID" tableName="EMAIL_ADDRESS"/>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468614142797-5">
+      <dropColumn columnName="PHONE_ID" tableName="PHONE"/>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468614142797-6">
+      <dropColumn columnName="TYPE_VALUE_ID" tableName="TYPE_VALUE"/>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468614142797-7">
+      <dropColumn columnName="VALUE_TYPE_LOOKUP" tableName="TYPE_VALUE"/>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468614142797-8">
+      <dropColumn columnName="VALUE_TYPE_VALUE" tableName="TYPE_VALUE"/>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468614142797-9">
+      <dropDefaultValue columnDataType="timestamp"
+                        columnName="created_date"
+                        tableName="jhi_user"/>
+   </changeSet>
+</databaseChangeLog>

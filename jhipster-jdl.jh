@@ -1,0 +1,75 @@
+
+
+enum EntityType {
+	ADDRESS_TYPE,
+    PHONE_TYPE,
+    EMAIL_TYPE
+}
+entity TypeValue {
+	//typeValueID Long,
+    entityType EntityType,
+    value String
+}
+
+entity Address {
+	//addressId Long,
+    city String,
+    zip String,
+    state String,
+    stateAbbr String,
+    streetAddress String
+}
+
+entity Phone {
+	//phoneId Long,
+    phoneNumber String
+}
+
+entity EmailAddress {
+	//emailAddressId Long,
+    email String
+}
+
+entity Contact {
+	//contactId Long,
+    firstName String,
+    lastName String,
+    nickName String,
+    company String,
+    jobTitle String,
+    birthdate LocalDate,
+    website String,
+    photo ImageBlob,
+    notes String
+}
+
+service Contact with serviceClass
+paginate Contact with pager
+dto Contact with mapstruct
+	
+
+relationship OneToMany {
+	Contact{phoneNumber} to Phone
+}
+
+relationship OneToMany {
+	Contact{address} to Address
+}
+
+relationship OneToMany {
+	Contact{emailAddress} to EmailAddress
+}
+
+relationship ManyToOne {
+	Phone{type} to TypeValue
+}
+
+relationship ManyToOne {
+	Address{type} to TypeValue
+}
+
+relationship ManyToOne {
+	EmailAddress{type} to TypeValue
+}
+
+

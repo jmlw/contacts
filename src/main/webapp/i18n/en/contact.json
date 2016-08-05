@@ -1,0 +1,51 @@
+{
+    "contactsApp": {
+        "contact" : {
+            "home": {
+                "title": "Contacts",
+                "createLabel": "Create a new Contact",
+                "createOrEditLabel": "Create or edit a Contact",
+                "search": "Search for Contact"
+            },
+            "created": "A new Contact is created with identifier {{ param }}",
+            "updated": "A Contact is updated with identifier {{ param }}",
+            "deleted": "A Contact is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Contact {{ id }}?"
+            },
+            "detail": {
+                "title": "Contact"
+            },
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "nickName": "Nick Name",
+            "company": "Company",
+            "jobTitle": "Job Title",
+            "birthdate": "Birthdate",
+            "website": "Website",
+            "photo": "Photo",
+            "notes": "Notes",
+            "phoneNumber": "Phone Number",
+            "addressHeader": "Address",
+            "emailAddressHeader": "Email Address",
+            "name": "Name",
+            "phone": {
+                "phoneNumber": "Phone Number",
+                "type": "Type"
+            },
+            "emailAddress": {
+                "email": "Email",
+                "type": "Type"
+            },
+            "address": {
+                "city": "City",
+                "zip": "Zip",
+                "state": "State",
+                "stateAbbr": "State Abbreviation",
+                "streetAddress": "Address",
+                "type": "Type"
+            },
+            "user": "User"
+        }
+    }
+}

@@ -1,0 +1,69 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAddressLabel" translate="contactsApp.address.home.createOrEditLabel">Create or edit a Address</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.address.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.address.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="contactsApp.address.city" for="field_city">City</label>
+            <input type="text" class="form-control" name="city" id="field_city"
+                    ng-model="vm.address.city"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="contactsApp.address.zip" for="field_zip">Zip</label>
+            <input type="text" class="form-control" name="zip" id="field_zip"
+                    ng-model="vm.address.zip"
+                     />
+        </div>
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" translate="contactsApp.address.state" for="field_state">State</label>-->
+            <!--<input type="text" class="form-control" name="state" id="field_state"-->
+                    <!--ng-model="vm.address.state"-->
+                     <!--/>-->
+        <!--</div>-->
+        <div class="form-group">
+            <label class="control-label" translate="contactsApp.address.stateAbbr" for="field_stateAbbr">State Abbr</label>
+            <input type="text" class="form-control" name="stateAbbr" id="field_stateAbbr"
+                    ng-model="vm.address.stateAbbr"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="contactsApp.address.streetAddress" for="field_streetAddress">Street Address</label>
+            <input type="text" class="form-control" name="streetAddress" id="field_streetAddress"
+                    ng-model="vm.address.streetAddress"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="contactsApp.address.type" for="field_type">Type</label>
+            <select class="form-control" id="field_type" name="type" ng-model="vm.address.type" ng-options="typeValue as typeValue.value for typeValue in vm.typevalues track by typeValue.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="contactsApp.address.contact" for="field_contact">Contact</label>
+            <select class="form-control" id="field_contact" name="contact" ng-model="vm.address.contactId" ng-options="contact.id as contact.id for contact in vm.contacts track by contact.id">
+                <option value=""></option>
+            </select>
+            <pre>Contact ID: {{vm.address.contactId}}</pre>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

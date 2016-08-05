@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+   <changeSet author="josh (generated)" id="1468968589256-1">
+      <createTable tableName="address">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="addressPK"/>
+         </column>
+         <column name="city" type="VARCHAR(255)"/>
+         <column name="contact_id" type="BIGINT"/>
+         <column name="state" type="VARCHAR(255)"/>
+         <column name="state_abbr" type="VARCHAR(255)"/>
+         <column name="street_address" type="VARCHAR(255)"/>
+         <column name="zip" type="VARCHAR(255)"/>
+         <column name="type_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-2">
+      <createTable tableName="contact">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="contactPK"/>
+         </column>
+         <column name="birthdate" type="date"/>
+         <column name="company" type="VARCHAR(255)"/>
+         <column name="first_name" type="VARCHAR(255)"/>
+         <column name="job_title" type="VARCHAR(255)"/>
+         <column name="last_name" type="VARCHAR(255)"/>
+         <column name="nick_name" type="VARCHAR(255)"/>
+         <column name="notes" type="VARCHAR(255)"/>
+         <column name="photo" type="BLOB"/>
+         <column name="photo_content_type" type="VARCHAR(255)"/>
+         <column name="website" type="VARCHAR(255)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-3">
+      <createTable tableName="email_address">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="email_addressPK"/>
+         </column>
+         <column name="contact_id" type="BIGINT"/>
+         <column name="email" type="VARCHAR(255)"/>
+         <column name="type_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-4">
+      <createTable tableName="jhi_authority">
+         <column name="name" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-5">
+      <createTable tableName="jhi_persistent_audit_event">
+         <column autoIncrement="true" name="event_id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="jhi_persistent_audit_eventPK"/>
+         </column>
+         <column name="event_date" type="timestamp"/>
+         <column name="event_type" type="VARCHAR(255)"/>
+         <column name="principal" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-6">
+      <createTable tableName="jhi_persistent_audit_evt_data">
+         <column name="event_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="value" type="VARCHAR(255)"/>
+         <column name="name" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-7">
+      <createTable tableName="jhi_user">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="jhi_userPK"/>
+         </column>
+         <column name="created_by" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="created_date" type="timestamp">
+            <constraints nullable="false"/>
+         </column>
+         <column name="last_modified_by" type="VARCHAR(50)"/>
+         <column name="last_modified_date" type="timestamp"/>
+         <column name="activated" type="BOOLEAN">
+            <constraints nullable="false"/>
+         </column>
+         <column name="activation_key" type="VARCHAR(20)"/>
+         <column name="email" type="VARCHAR(100)"/>
+         <column name="first_name" type="VARCHAR(50)"/>
+         <column name="lang_key" type="VARCHAR(5)"/>
+         <column name="last_name" type="VARCHAR(50)"/>
+         <column name="login" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="password_hash" type="VARCHAR(60)"/>
+         <column name="reset_date" type="timestamp"/>
+         <column name="reset_key" type="VARCHAR(20)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-8">
+      <createTable tableName="jhi_user_authority">
+         <column name="user_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="authority_name" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-9">
+      <createTable tableName="phone">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="phonePK"/>
+         </column>
+         <column name="contact_id" type="BIGINT"/>
+         <column name="phone_number" type="VARCHAR(255)"/>
+         <column name="type_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-10">
+      <createTable tableName="type_value">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="type_valuePK"/>
+         </column>
+         <column name="entity_type" type="VARCHAR(255)"/>
+         <column name="value" type="VARCHAR(255)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-11">
+      <addPrimaryKey columnNames="event_id, name" tableName="jhi_persistent_audit_evt_data"/>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-12">
+      <addPrimaryKey columnNames="user_id, authority_name" tableName="jhi_user_authority"/>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-13">
+      <addPrimaryKey columnNames="name"
+                     constraintName="jhi_authorityPK"
+                     tableName="jhi_authority"/>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-14">
+      <addUniqueConstraint columnNames="email"
+                           constraintName="UC_JHI_USEREMAIL_COL"
+                           tableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-15">
+      <addUniqueConstraint columnNames="login"
+                           constraintName="UC_JHI_USERLOGIN_COL"
+                           tableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-16">
+      <addForeignKeyConstraint baseColumnNames="type_id"
+                               baseTableName="address"
+                               constraintName="FK_6yss77vvko6syovyqwijxjdbb"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="type_value"/>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-17">
+      <addForeignKeyConstraint baseColumnNames="contact_id"
+                               baseTableName="address"
+                               constraintName="FK_891kjfcuawa7kebtjg91sywf1"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="contact"/>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-18">
+      <addForeignKeyConstraint baseColumnNames="contact_id"
+                               baseTableName="email_address"
+                               constraintName="FK_a83pb178egwd53dk9dvivhikh"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="contact"/>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-19">
+      <addForeignKeyConstraint baseColumnNames="event_id"
+                               baseTableName="jhi_persistent_audit_evt_data"
+                               constraintName="FK_evb970jo5bi8aon8s65c0lyyn"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="event_id"
+                               referencedTableName="jhi_persistent_audit_event"/>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-20">
+      <addForeignKeyConstraint baseColumnNames="authority_name"
+                               baseTableName="jhi_user_authority"
+                               constraintName="FK_ik5r332jlvpolfr7e5n7oi42l"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="name"
+                               referencedTableName="jhi_authority"/>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-21">
+      <addForeignKeyConstraint baseColumnNames="type_id"
+                               baseTableName="email_address"
+                               constraintName="FK_in2scx8da934u9enag5nq03wo"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="type_value"/>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-22">
+      <addForeignKeyConstraint baseColumnNames="type_id"
+                               baseTableName="phone"
+                               constraintName="FK_owjrks2eithyck84hah424bpq"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="type_value"/>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-23">
+      <addForeignKeyConstraint baseColumnNames="user_id"
+                               baseTableName="jhi_user_authority"
+                               constraintName="FK_pg0oaw6mr9pt3ibeihdc1jwof"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="josh (generated)" id="1468968589256-24">
+      <addForeignKeyConstraint baseColumnNames="contact_id"
+                               baseTableName="phone"
+                               constraintName="FK_tbp4a6165ytbb0whwvmqgoub7"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="contact"/>
+   </changeSet>
+   <changeSet id="1468968589256-25" author="josh">
+       <loadData encoding="UTF-8"
+                 file="config/liquibase/type_value.csv"
+                 separator=";"
+                 tableName="type_value"/>
+   </changeSet>
+</databaseChangeLog>

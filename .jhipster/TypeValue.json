@@ -1,0 +1,21 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "entityType",
+      "fieldType": "EntityType",
+      "fieldValues": "ADDRESS_TYPE,PHONE_TYPE,EMAIL_TYPE"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "value",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160718003319",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "entityTableName": "type_value"
+}

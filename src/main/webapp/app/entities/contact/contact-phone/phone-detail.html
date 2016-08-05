@@ -1,0 +1,26 @@
+
+<div>
+    <h2><span translate="contactsApp.phone.detail.title">Phone</span> {{vm.phone.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="contactsApp.phone.phoneNumber">Phone Number</span></dt>
+        <dd>
+            <span>{{vm.phone.phoneNumber}}</span>
+        </dd>
+        <dt><span translate="contactsApp.phone.type">Type</span></dt>
+        <dd>
+            <a ui-sref="type-value-detail({id:vm.phone.type.id})">{{vm.phone.type.id}}</a>
+        </dd>
+        <dt><span translate="contactsApp.phone.contact">Contact</span></dt>
+        <dd>
+            <a ui-sref="contact-detail({id:vm.phone.contact.id})">{{vm.phone.contact.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

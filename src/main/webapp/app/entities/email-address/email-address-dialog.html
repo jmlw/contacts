@@ -1,0 +1,45 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEmailAddressLabel" translate="contactsApp.emailAddress.home.createOrEditLabel">Create or edit a Email Address</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.emailAddress.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.emailAddress.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="contactsApp.emailAddress.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="vm.emailAddress.email"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="contactsApp.emailAddress.type" for="field_type">Type</label>
+            <select class="form-control" id="field_type" name="type" ng-model="vm.emailAddress.type" ng-options="typeValue as typeValue.value for typeValue in vm.typevalues track by typeValue.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="contactsApp.emailAddress.contact" for="field_contact">Contact</label>
+            <select class="form-control" id="field_contact" name="contact" ng-model="vm.emailAddress.contactId" ng-options="contact.id as contact.id for contact in vm.contacts track by contact.id">
+                <option value=""></option>
+            </select>
+            <pre>Contact ID: {{vm.emailAddress.contactId}}</pre>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

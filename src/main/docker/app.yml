@@ -1,0 +1,22 @@
+version: '2'
+services:
+    contacts-app:
+        image: contacts
+        external_links:
+            - contacts-postgresql:postgresql
+            - contacts-elasticsearch:elasticsearch
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/Contacts
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=elasticsearch:9300
+        ports:
+            - 8080:8080
+    contacts-postgresql:
+        extends:
+            file: postgresql.yml
+            service: contacts-postgresql
+    contacts-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: contacts-elasticsearch

@@ -1,0 +1,23 @@
+{
+    "contactsApp": {
+        "typeValue" : {
+            "home": {
+                "title": "Type Values",
+                "createLabel": "Create a new Type Value",
+                "createOrEditLabel": "Create or edit a Type Value",
+                "search": "Search for Type Value"
+            },
+            "created": "A new Type Value is created with identifier {{ param }}",
+            "updated": "A Type Value is updated with identifier {{ param }}",
+            "deleted": "A Type Value is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Type Value {{ id }}?"
+            },
+            "detail": {
+                "title": "Type Value"
+            },
+            "entityType": "Entity Type",
+            "value": "Value"
+        }
+    }
+}

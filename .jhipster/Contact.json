@@ -1,0 +1,78 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipType": "one-to-many",
+      "relationshipName": "phoneNumber",
+      "otherEntityName": "phone",
+      "otherEntityRelationshipName": "contact"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipType": "one-to-many",
+      "relationshipName": "address",
+      "otherEntityName": "address",
+      "otherEntityRelationshipName": "contact"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipType": "one-to-many",
+      "relationshipName": "emailAddress",
+      "otherEntityName": "emailAddress",
+      "otherEntityRelationshipName": "contact"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "firstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "nickName",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "company",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "jobTitle",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "birthdate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "website",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 8,
+      "fieldName": "photo",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldId": 9,
+      "fieldName": "notes",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160718003323",
+  "dto": "mapstruct",
+  "pagination": "pager",
+  "service": "serviceClass",
+  "entityTableName": "contact"
+}

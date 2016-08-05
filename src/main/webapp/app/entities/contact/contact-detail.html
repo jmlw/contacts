@@ -1,0 +1,175 @@
+
+<div>
+    <h2><span translate="contactsApp.contact.detail.title">Contact</span> {{vm.contact.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="contactsApp.contact.firstName">First Name</span></dt>
+        <dd>
+            <span>{{vm.contact.firstName}}</span>
+        </dd>
+        <dt><span translate="contactsApp.contact.lastName">Last Name</span></dt>
+        <dd>
+            <span>{{vm.contact.lastName}}</span>
+        </dd>
+        <dt><span translate="contactsApp.contact.nickName">Nick Name</span></dt>
+        <dd>
+            <span>{{vm.contact.nickName}}</span>
+        </dd>
+        <dt><span translate="contactsApp.contact.company">Company</span></dt>
+        <dd>
+            <span>{{vm.contact.company}}</span>
+        </dd>
+        <dt><span translate="contactsApp.contact.jobTitle">Job Title</span></dt>
+        <dd>
+            <span>{{vm.contact.jobTitle}}</span>
+        </dd>
+        <dt><span translate="contactsApp.contact.birthdate">Birthdate</span></dt>
+        <dd>
+            <span>{{vm.contact.birthdate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span translate="contactsApp.contact.website">Website</span></dt>
+        <dd>
+            <span>{{vm.contact.website}}</span>
+        </dd>
+        <dt><span translate="contactsApp.contact.photo">Photo</span></dt>
+        <dd>
+            <div ng-if="vm.contact.photo">
+                <a ng-click="vm.openFile(vm.contact.photoContentType, vm.contact.photo)">
+                    <img data-ng-src="{{'data:' + vm.contact.photoContentType + ';base64,' + vm.contact.photo}}" style="max-width: 100%;"/>
+                </a>
+                {{vm.contact.photoContentType}}, {{vm.byteSize(vm.contact.photo)}}
+            </div>
+        </dd>
+        <dt><span translate="contactsApp.contact.notes">Notes</span></dt>
+        <dd>
+            <span>{{vm.contact.notes}}</span>
+        </dd>
+        <dd>
+            <div class="table-responsive">
+                <table class="jh-table table table-striped">
+                    <thead>
+                    <tr>
+                        <th><span translate="contactsApp.contact.phone.phoneNumber">Phone Number</span></th>
+                        <th><span translate="contactsApp.contact.phone.type">Type</span></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="phone in vm.contact.phoneNumbers track by phone.id">
+                        <td>{{phone.phoneNumber}}</td>
+                        <td>{{phone.type.value}}</td>
+                        <td class="text-right">
+                            <div class="btn-group flex-btn-group-container">
+                                <button type="submit"
+                                        ui-sref="phone.edit({id:phone.id})"
+                                        class="btn btn-primary btn-sm">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
+                                <button type="submit"
+                                        ui-sref="phone.delete({id:phone.id})"
+                                        class="btn btn-danger btn-sm">
+                                    <span class="glyphicon glyphicon-remove-circle"></span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+        </dd>
+        <dd>
+            <div class="table-responsive">
+                <table class="jh-table table table-striped">
+                    <thead>
+                    <tr>
+                        <th><span translate="contactsApp.contact.emailAddress.email">Email</span></th>
+                        <th><span translate="contactsApp.contact.emailAddress.type">Type</span></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="emailAddress in vm.contact.emailAddresses track by emailAddress.id">
+                        <td>{{emailAddress.email}}</td>
+                        <td>
+                            {{emailAddress.type.value}}
+                        </td>
+                        <td class="text-right">
+                            <div class="btn-group flex-btn-group-container">
+                                <button type="submit"
+                                        ui-sref="email-address-detail({id:emailAddress.id})"
+                                        class="btn btn-info btn-sm">
+                                    <span class="glyphicon glyphicon-eye-open"></span>
+                                </button>
+                                <button type="submit"
+                                        ui-sref="email-address.edit({id:emailAddress.id})"
+                                        class="btn btn-primary btn-sm">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
+                                <button type="submit"
+                                        ui-sref="email-address.delete({id:emailAddress.id})"
+                                        class="btn btn-danger btn-sm">
+                                    <span class="glyphicon glyphicon-remove-circle"></span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </dd>
+        <dd>
+            <div class="table-responsive">
+                <table class="jh-table table table-striped">
+                    <thead>
+                    <tr>
+                        <th><span translate="contactsApp.contact.address.city">City</span></th>
+                        <th><span translate="contactsApp.contact.address.zip">Zip</span></th>
+                        <!--<th><span translate="contactsApp.contact.address.state">State</span></th>-->
+                        <th><span translate="contactsApp.contact.address.stateAbbr">State Abbr</span></th>
+                        <th><span translate="contactsApp.contact.address.streetAddress">Street Address</span></th>
+                        <th><span translate="contactsApp.contact.address.type">Type</span></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="address in vm.contact.addresses track by address.id">
+                        <td>{{address.city}}</td>
+                        <td>{{address.zip}}</td>
+                        <!--<td>{{address.state}}</td>-->
+                        <td>{{address.stateAbbr}}</td>
+                        <td>{{address.streetAddress}}</td>
+                        <td>
+                            {{address.type.value}}
+                        </td>
+                        <td class="text-right">
+                            <div class="btn-group flex-btn-group-container">
+                                <button type="submit"
+                                        ui-sref="address-detail({id:address.id})"
+                                        class="btn btn-info btn-sm">
+                                    <span class="glyphicon glyphicon-eye-open"></span>
+                                </button>
+                                <button type="submit"
+                                        ui-sref="address.edit({id:address.id})"
+                                        class="btn btn-primary btn-sm">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
+                                <button type="submit"
+                                        ui-sref="address.delete({id:address.id})"
+                                        class="btn btn-danger btn-sm">
+                                    <span class="glyphicon glyphicon-remove-circle"></span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>
